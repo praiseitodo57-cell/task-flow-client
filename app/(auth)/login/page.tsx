@@ -9,6 +9,7 @@ import { toast } from "sonner";
 import { Button } from "../../../components/ui/button";
 import { Input } from "../../../components/ui/input";
 import { Label } from "../../../components/ui/label";
+import { Suspense } from "react";
 import {
   Card, CardContent, CardDescription,
   CardFooter, CardHeader, CardTitle,
@@ -55,6 +56,7 @@ export default function LoginPage() {
   };
 
   return (
+    <Suspense fallback={<div>Loading...</div>}>
     <div className="min-h-screen bg-muted flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
@@ -99,5 +101,6 @@ export default function LoginPage() {
         </Card>
       </div>
     </div>
+    </Suspense>
   );
 }
